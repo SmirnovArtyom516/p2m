@@ -15,7 +15,8 @@ import { ReactComponent as Visible } from './utils/Eye.svg';
 import { users } from './api/api';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
+// import './App.css';
+import './Train.css';
 
 const popover = (
   <Popover id="popover-basic">
@@ -48,7 +49,6 @@ function App() {
   const [phone, setPhone] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-  const [errorlog, setErrolog] = useState('');
   const [showPassword, setshowPassword] = useState(false);
   const [show, setShow] = useState(false);
   const [flag, setFlag] = useState(false);
@@ -62,22 +62,27 @@ function App() {
   return (
     <div className="Main">
       <div className="App-left">
-        <Arrow className="Arrow" />
-        <a href="/" className="GoBack">
-          Назад
-        </a>
-        <Pay2me className="Pay2me" />
+        <div className="GoBack">
+          <Arrow />
+          <a href="/" className="backText">
+            Назад
+          </a>
+        </div>
         {!flag
           ? (
             <div>
               {!user.name
                 ? (
-                  <>
+                  <div className="content">
+                    <Pay2me />
                     <h5 className="IntoText">
                       Войти в личный кабинет
                     </h5>
                     <Auth className="authText" />
-                    <form onSubmit={AuthHandler}>
+                    <form
+                      className="form"
+                      onSubmit={AuthHandler}
+                    >
                       <div className="input-group">
                         <input value={phone} onChange={(e) => setPhone(e.target.value)} type="text" className="form-control" placeholder="Введите номер телефона или почту" />
                       </div>
@@ -88,43 +93,49 @@ function App() {
                         </Button>
                       </div>
                     </form>
-                    {error && <span className="errorPhone">Такого телефона не существует</span>}
+                    {error && <span className="error">Такого телефона не существует</span>}
                     <div className="RegText">
-                      <span className="RegistrationText">У вас еще нет аккаунта?</span>
-                      <a href="/" className="Registration">
-                        Зарегистрироваться
-                      </a>
+                      <div className="textq">
+                        <span>У вас еще нет аккаунта?</span>
+                        <a href="/" className="question">
+                          Зарегистрироваться
+                        </a>
+                      </div>
+                      <div className="textq">
+                        <span>Возникли проблемы со входом?</span>
+                        <a href="/" className="question">
+                          Восстановить доступ
+                        </a>
+                      </div>
                     </div>
-                    <div className="RegText">
-                      <span className="questionText">Возникли проблемы со входом?</span>
-                      <a href="/" className="question">
-                        Восстановить доступ
-                      </a>
-                    </div>
-                  </>
+                  </div>
                 )
                 : (
-                  <>
-                    {' '}
-                    <h5 className="IntoText">{`Здравствуйте, ${user.name}!`}</h5>
-                    <span className="enterTextForNumber">{`Введите пароль для номера +7(${user.phone[1]}${user.phone[2]}${user.phone[3]})****-**-${user.phone[9]}${user.phone[10]}`}</span>
-                    <form>
+                  <div className="content">
+                    <div>
+                      <Pay2me />
+                      <h5 className="IntoText">{`Здравствуйте, ${user.name}!`}</h5>
+                      <div>
+                        <p className="enterTextForNumber">{`Введите пароль для номера +7(${user.phone[1]}${user.phone[2]}${user.phone[3]})****-**-${user.phone[9]}${user.phone[10]}`}</p>
+                      </div>
+                    </div>
+                    <form className="form">
                       <div className="input-group">
                         <input value={password} onChange={(e) => setPassword(e.target.value)} type={showPassword ? 'text' : 'password'} className="form-control" placeholder="Введите пароль" />
+                      </div>
+                      <div style={{ position: 'relative', right: '58px', top: '10px' }}>
                         <Visible
                           onClick={() => setshowPassword(!showPassword)}
                           className="visible"
                         />
-                        <div />
                       </div>
                       <div>
                         <Button
                           onClick={() => {
                             setFlag(!flag);
-                            setErrolog('Возможно, электронная почта или парооль введены некорректно. Попробуйте ещё раз.');
-                            console.log(errorlog);
+                            setError('Возможно, электронная почта или парооль введены некорректно. Попробуйте ещё раз.');
                           }}
-                          type="submit"
+                          type="button"
                           className="btn btn-primary"
                         >
                           Далее
@@ -133,79 +144,74 @@ function App() {
                       </div>
                     </form>
                     <div className="RegText">
-                      <span className="RegistrationText">У вас еще нет аккаунта?</span>
-                      <a href="/" className="Registration">
-                        Зарегистрироваться
-                      </a>
+                      <div className="textq">
+                        <span>У вас еще нет аккаунта?</span>
+                        <a href="/" className="question">
+                          Зарегистрироваться
+                        </a>
+                      </div>
+                      <div className="textq">
+                        <span>Возникли проблемы со входом?</span>
+                        <a href="/" className="question">
+                          Восстановить доступ
+                        </a>
+                      </div>
                     </div>
-                    <div className="RegText">
-                      <span className="questionText">Возникли проблемы со входом?</span>
-                      <a href="/" className="question">
-                        Восстановить доступ
-                      </a>
-                    </div>
-                  </>
+                  </div>
                 )}
             </div>
           )
           : (
-            <div style={{ position: 'relative' }}>
-              <h5 className="IntoText">Что то пошло не так</h5>
-              <span className="enterTextForNumber">Вы ввели неверный логин или пароль</span>
-              <div className="input-group">
-                <input
-                  value={phone}
-                  onChange={(e) => setPhone(e.target.value)}
-                  type="text"
-                  className="errorPhoneInput"
-                  placeholder="Введите номер телефона или почту"
-                />
-                {errorlog && (
-                <span
-                  style={{
-                    position: 'absolute',
-                    top: '1px',
-                    width: '40vh',
-                    left: '2px',
-                  }}
-                  className="errorPhone"
-                >
-                  Возможно, электронная почта или парооль введены некорректно. Попробуйте ещё раз.
-                </span>
-                )}
-                <input value={password} onChange={(e) => setPassword(e.target.value)} type={showPassword ? 'text' : 'password'} className="errorPasswordInput" placeholder="Введите пароль" />
-                {errorlog && (
-                <span
-                  style={{
-                    position: 'absolute',
-                    top: '100px',
-                    left: '2px',
-                    width: '40vh',
-                  }}
-                  className="errorPhone"
-                >
-                  Возможно, электронная почта или парооль введены некорректно. Попробуйте ещё раз.
-                </span>
-                )}
+            <div className="content">
+              <div>
+                <Pay2me />
+                <h5 className="IntoText">Ой что то пошло не так</h5>
+                <div>
+                  <p className="enterTextForNumber">Вы ввели неверный логин или пароль.</p>
+                </div>
               </div>
-              <Button
-                style={{
-                  position: 'absolute', top: '658px', left: '339px', width: '304px',
-                }}
-                type="submit"
-                className="btn btn-primary"
-              >
-                Далее
-              </Button>
-              <div style={{ position: 'absolute', width: '100vh', top: '150px' }}>
-                <div className="RegText">
-                  <span className="RegistrationText">У вас еще нет аккаунта?</span>
-                  <a href="/" className="Registration">
+              <form className="form-end">
+                <div className="input-group">
+                  <div>
+                    <input style={{ borderColor: 'red', width: '380px', height: '48px' }} value={phone} onChange={(e) => setPhone(e.target.value)} type="text" className="form-control" placeholder="Введите номер телефона или почту" />
+                  </div>
+                  <div>
+                    {error && <span className="error">Возможно, электронная почта введена некорректно. Попробуйте ещё раз.</span>}
+                  </div>
+                </div>
+                <div className="input-group">
+                  <div>
+                    <input style={{ borderColor: 'red', width: '380px', height: '48px' }} value={password} onChange={(e) => setPassword(e.target.value)} type={showPassword ? 'text' : 'password'} className="form-control" placeholder="Введите пароль" />
+                  </div>
+                  <div>
+                    {error && <span className="error">Возможно, электронная почта введена некорректно. Попробуйте ещё раз.</span>}
+                  </div>
+                </div>
+                <div style={{ position: 'relative', left: '391px', bottom: '105px' }}>
+                  <Visible
+                    onClick={() => setshowPassword(!showPassword)}
+                    className="visible"
+                  />
+                </div>
+                <div>
+                  <Button
+                    style={{ width: '377px' }}
+                    type="button"
+                    className="btn btn-primary"
+                  >
+                    Далее
+                  </Button>
+                </div>
+              </form>
+              <div className="RegText">
+                <div className="textq">
+                  <span>У вас еще нет аккаунта?</span>
+                  <a href="/" className="question">
                     Зарегистрироваться
                   </a>
                 </div>
-                <div className="RegText">
-                  <span className="questionText">Возникли проблемы со входом?</span>
+                <div className="textq">
+                  <span>Возникли проблемы со входом?</span>
                   <a href="/" className="question">
                     Восстановить доступ
                   </a>
@@ -213,29 +219,48 @@ function App() {
               </div>
             </div>
           )}
-        <span className="sPay2me">
-          Ⓒ PAY2ME 2023
-        </span>
-        <span className="addres1">ООО «Куарми» ИНН 7743364603</span>
-        <span className="addres2">Юридический адрес 125445, Г. Москва, Ул. Беломорская, Д. 11, К. 1/290</span>
-        <div className="tooltipDiv">
-          <OverlayTrigger trigger="click" placement="top" overlay={popover}>
-            <Button style={{ backgroundColor: 'transparent', borderColor: 'white' }} variant="danger" ref={target} onClick={() => setShow(!show)}>
-              <FlagRu />
-            </Button>
-          </OverlayTrigger>
-          <span style={{ position: 'absolute', left: '50px', bottom: '5px' }}>Ru</span>
+        <div className="footer">
+          <div className="address">
+            <span className="pay2meTxt">
+              Ⓒ PAY2ME 2023
+            </span>
+            <span className="adressTxt">ООО «Куарми» ИНН 7743364603</span>
+            <span className="adressTxt">Юридический адрес 125445, Г. Москва, Ул. Беломорская, Д. 11, К. 1/290</span>
+          </div>
+          <div className="politic">
+            <a href="/" className="polit1">
+              Политика конфиденциальности
+            </a>
+            <a href="/" className="polit1">
+              Пользовательское соглашение
+            </a>
+          </div>
         </div>
-        <div>
-          <Chat className="Chat" />
+        <div className="language">
+          <div className="tooltipDiv">
+            <OverlayTrigger trigger="click" placement="top" overlay={popover}>
+              <Button style={{ backgroundColor: 'transparent', borderColor: 'white' }} variant="danger" ref={target} onClick={() => setShow(!show)}>
+                <FlagRu />
+              </Button>
+            </OverlayTrigger>
+            <span style={{
+              position: 'absolute',
+              top: '10px',
+            }}
+            >
+              Ru
+
+            </span>
+          </div>
+          <div>
+            <Chat style={{
+              position: 'absolute',
+              bottom: '66px',
+            }}
+            />
+          </div>
         </div>
       </div>
-      <a href="/" className="politic">
-        Политика конфиденциальности
-      </a>
-      <a href="/" className="userConfirm">
-        Пользовательское соглашение
-      </a>
       <div className="App-right">
         <Picture className="Logo" />
       </div>
