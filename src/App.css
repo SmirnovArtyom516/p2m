@@ -1,0 +1,296 @@
+.Main{
+  overflow:  hidden;
+  display: flex;
+}
+
+.App-left {
+  position: relative;
+  width: 1156px;
+  height: 1080px;
+}
+
+.App-right {
+  height: 1080px;
+  width: 764px;
+  background-color: #F8F8FE;
+  position: relative;
+}
+
+.Logo{
+  top: 239px;
+  left: 40px;
+  width: 811px;
+  height: 679px;
+  position: absolute;
+}
+
+.Pay2me{
+  top: 265px;
+  left: 344px;
+  position: absolute;
+}
+
+.GoBack{
+  position: absolute;
+  top: 85.5px;
+  left: 368px;
+  text-decoration: none;
+  color: #744CED;
+  font-family: Open Sans;
+  font-size: 14px;
+}
+
+
+.Arrow{
+  position: absolute;
+  top: 86px;
+  left: 340px;
+}
+
+
+.IntoText{
+  position: absolute;
+  color: black;
+  font-family: Open Sans;
+  font-size: 28px;
+  font-weight: 1000;
+  top: 347px;
+  left: 340px;
+}
+
+.input-group{
+  position: absolute;
+  top: 499px;
+  left: 340px;
+  width: 380px;
+  height: 48px;
+  border-radius: 10px;
+}
+
+.authText{
+  position: absolute;
+  top: 403px;
+  left: 340px;
+}
+
+.btn-primary{
+  width: 133px;
+  height: 48px;
+  border-radius: 100px;
+  position: absolute;
+  background-color: #744CED;
+  border-color: #5f2bfa;
+  top: 499px;
+  left: 740px;
+}
+
+.btn-primary:hover{
+  background-color: #5f2bfa;
+}
+
+.btn-primary:active{
+  background-color: #5f2bfa !important;
+}
+
+.btn{
+  display: flex;
+  column-gap: 9px;
+  align-items: center;
+  justify-content: center;
+}
+
+.Registration{
+  position: absolute;
+  top: 584.5px;
+  left: 552px;
+  text-decoration: none;
+  color: #744CED;
+  font-family: Open Sans;
+  font-size: 18px;
+  line-height: 24.51px;
+  font-weight: 400;
+}
+
+.RegistrationText{
+  color: #4A3C73;
+  position: absolute;
+  top: 585.5px;
+  left: 340px;
+  font-size: 18px;
+  line-height: 23.4px;
+  font-family: Open Sans;
+  font-weight: 300;
+}
+
+
+.question{
+  position: absolute;
+  top: 634.5px;
+  left: 621px;
+  text-decoration: none;
+  color: #744CED;
+  font-family: Open Sans;
+  font-size: 18px;
+  line-height: 24.51px;
+  font-weight: 400;
+}
+
+.questionText{
+  color: #4A3C73;
+  position: absolute;
+  top: 635.5px;
+  left: 340px;
+  font-size: 18px;
+  line-height: 23.4px;
+  font-family: Open Sans;
+  font-weight: 300;
+}
+
+.sPay2me{
+  color: #4A3C73;
+  font-family: Open Sans;
+  font-size: 16px;
+  line-height: 20.8px;
+  position: absolute;
+  top: 950px;
+  left: 340px;
+}
+
+.addres1{
+  color: #A197BD;
+  font-size: 10px;
+  font-family: Open Sans;
+  font-weight: 300;
+  position: absolute;
+  top: 978px;
+  left: 340px;
+}
+
+.addres2{
+  color: #A197BD;
+  font-size: 10px;
+  font-family: Open Sans;
+  font-weight: 300;
+  position: absolute;
+  top: 993px;
+  left: 340px;
+}
+
+
+.politic{
+  text-decoration: none;
+  color: #744CED;
+  position: absolute;
+  top: 1023.5px;
+  left: 340px;
+  font-size: 14px;
+  line-height: 19.07px;
+  font-family: Open Sans;
+  font-weight: 300;
+}
+
+.userConfirm{
+  text-decoration: none;
+  color: #744CED;
+  position: absolute;
+  top: 1023.5px;
+  left: 620px;
+  font-size: 14px;
+  line-height: 19.07px;
+  font-family: Open Sans;
+  font-weight: 300;
+}
+
+.tooltipDiv{
+  position: absolute;
+  top: 1023px;
+  left: 894.17px;
+}
+
+.tooltipBtn{
+  background-color: transparent;
+  border-color: white;
+}
+
+.button.btn.btn-danger, .btn-danger:focus{
+  background-color: white;
+  box-shadow: unset !important;
+}
+
+.btn:focus-visible{
+  box-shadow: 10px 5px 5px rgb(255, 255, 255) !important;
+}
+
+.Chat{
+  position: absolute;
+  top: 880px;
+  left: 800px;
+}
+
+.enterTextForNumber{
+  color: #4A3C73;
+  font-size: 18px;
+  position: absolute;
+  line-height: 23.4px;
+  font-family: Open Sans;
+  top: 403px;
+  left: 340px;
+}
+
+
+.visible{
+  position: absolute;
+  top: 18px;
+  left: 350px;
+  color: #4A3C73;
+  width: 17.2px;
+  height: 14px;
+
+}
+
+
+.errorPhone{
+  color: #DA1D20;
+  position: absolute;
+  top: 555px;
+  left: 343px;
+  font-family: Open Sans;
+  font-size: 12px;
+}
+
+.errorPhoneInput{
+  position: absolute;
+  top: 447px;
+  left: 340px;
+  width: 302px;
+  height: 48px;
+  border-radius: 10px;
+}
+
+
+.errorPasswordInput{
+    border: 1px solid #ff0000;
+    width: 300px;
+    border-radius: 7px;
+    height: 45px;
+    position: absolute;
+    top: 44px;
+}
+
+.errorPasswordInput:focus-visible{
+  border-color: gray
+}
+
+.errorPhoneInput{
+  border: 1px solid #ff0000;
+  position: absolute;
+  top: -54px;
+  left: 0px;
+  width: 300px;
+  border-radius: 7px;
+  height: 45px
+}
+
+@media screen {
+  
+}
