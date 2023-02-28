@@ -4,8 +4,8 @@
 }
 
 .App-left{
-    width: 1156px;
-    height: 100vh;
+    /* width: 1156px; */
+    /* height: 100vh; */
 }
 
 .GoBack{
@@ -33,8 +33,8 @@
 
 .App-right{
     background-color: #F8F8FE;
-    width: 764px;
-    height: 100vh;
+    /* width: 764px; */
+    /* height: 100vh; */
     padding-left: 40px;
     padding-top: 239px;
 }
@@ -46,18 +46,32 @@
     margin-left: 344px;
 }
 
+.content2{
+    display: flex;
+    flex-direction: column;
+    margin-top: 265px;
+    margin-left: 344px;
+}
+
+.content3{
+    display: flex;
+    flex-direction: column;
+    margin-top: 265px;
+    margin-left: 344px;
+}
+
 .textq{
     color: #4A3C73;
     font-family: Open Sans;
     font-size: 18px;
-    line-height: 23.4px
+    /* line-height: 23.4px */
 }
 
 .question{
     text-decoration: none;
     color: #744CED;
     font-family: Open Sans;
-    line-height: 24.51px
+    /* line-height: 24.51px */
 }
 
 .form{
@@ -91,14 +105,14 @@
     display: flex;
     flex-direction: column;
     column-gap: 10px;
-    width: 100vh;
+    /* width: 100vh; */
     row-gap: 20px;
     margin-top: 38.5px;
 }
 
 .input-group{
-    width:380px;
-    Height: 48px
+    /* width:380px;
+    Height: 48px */
 }
 
 .btn-primary{
@@ -110,8 +124,8 @@
     background-color: #744CED;
     border-radius: 100px;
     border: 0px;
-    width: 133px;
-    height: 48px;
+    /* width: 133px; */
+    /* height: 48px; */
 }
 
 .footer{
@@ -139,32 +153,32 @@
     text-decoration: none;
     font-size: Open Sans;
     font-size: 14px;
-    line-height: 19.07px;
+    /* line-height: 19.07px; */
     color: #744CED;
 }
 
 .adressTxt{
     color: #A197BD;
     font-size: 10px;
-    line-height: 13px;
+    /* line-height: 13px; */
 }
 
 .pay2meTxt{
     font-size: 16px;
     color: #4A3C73;
-    line-height: 20.8px;
+    /* line-height: 20.8px; */
 }
 
 .error{
     color: red;
-    width: 50%;
+    /* width: 50%; */
 }
 
 .enterTextForNumber{
     margin-top: 20px;
     color: #4A3C73;
     font-size: 18px;
-    line-height: 23.4px;
+    /* line-height: 23.4px; */
     font-family: Open Sans;
 }
 
@@ -174,28 +188,146 @@
     row-gap: 68px;
 }
 
+.chat{
+    position: absolute;
+    bottom: 66px;
+}
+
+.form-control{
+    border-color: red;
+     width: 380px;
+        height: 48px;
+}
+
+.visible{
+    position: relative;
+     right: 58px;
+      top: 10px
+}
+
+
 @media only screen and (max-width: 360px){
     .Main{
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 100vh;
-        height: 100vh;
+        max-width: 360px;
+        /* height: 100vh; */
+    }
+    .App-right{
+        opacity: 0;
     }
 
-    .App-left{
+    .GoBack{
+        display: flex;
+        padding-left: 624px;
+        padding-top: 85.5px;
+        align-items: center;
+        column-gap: 10px;
+        position: absolute;
+    }
+
+    .content{
+        padding-left: 501px
+    }
+
+    .form{
+        flex-direction: column;
+        row-gap: 20px;
+    }
+
+    .btn-primary{
+        min-width: 82%;
+    }
+
+    .textq{
+        font-size: 12px;
+    }
+
+    .RegText{
+        width: 150%;
+    }
+
+    .authText{
+        padding: 5px;
+        padding-right: 96px;
+    }
+
+    .IntoText{
+        font-size: 22px;
+    }
+
+    .input-group{
+        width: 82%;
+    }
+
+    .address{
+        margin-left: 68%;
+        margin-top: 132px;
+    }
+
+    .tooltipDiv{
+        position: absolute;
+        left: 198px
+    }
+
+    .chat{
+        left: 44px;
+    }
+
+    .politic{
+        margin-left: 68%;
+        flex-direction: column;
+        row-gap: 10px;
+    }
+
+    .GoBack{
+        top: 6%;
+        left: -172%;
+    }
+
+    .form-control{
+        width: 323px;
+    }
+
+    .footer{
+        margin-left: 160px
+    }
+
+    .content2{
+        Width: 79%;
+        padding-left: 300px
+    }
+
+    .content3{
+        padding-left: 420px
+    }
+
+    .visible{
+        right: -84%;
+        top: -56px;
+    }
+
+    .btn btn-primary{}
+
+
+    .form-end{
+        row-gap: 5px;
+    }
+
+    /* .App-left{
         display: flex;
         align-items: center;
         justify-content: center;
         width: 100vh;
         height: 100vh;
-    }
-    .App-right{
+    } */
+    /* .App-right{
         background-color: #F8F8FE;
         opacity: 0;
         width: 764px;
         height: 100vh;
         padding-left: 40px;
         padding-top: 239px;
-    }
+    } */
 }

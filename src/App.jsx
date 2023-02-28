@@ -111,22 +111,17 @@ function App() {
                   </div>
                 )
                 : (
-                  <div className="content">
-                    <div>
-                      <Pay2me />
-                      <h5 className="IntoText">{`Здравствуйте, ${user.name}!`}</h5>
-                      <div>
-                        <p className="enterTextForNumber">{`Введите пароль для номера +7(${user.phone[1]}${user.phone[2]}${user.phone[3]})****-**-${user.phone[9]}${user.phone[10]}`}</p>
-                      </div>
-                    </div>
+                  <div className="content2">
+                    <Pay2me />
+                    <h5 className="IntoText">{`Здравствуйте, ${user.name}!`}</h5>
+                    <p className="enterTextForNumber">{`Введите пароль для номера +7(${user.phone[1]}${user.phone[2]}${user.phone[3]})****-**-${user.phone[9]}${user.phone[10]}`}</p>
                     <form className="form">
                       <div className="input-group">
                         <input value={password} onChange={(e) => setPassword(e.target.value)} type={showPassword ? 'text' : 'password'} className="form-control" placeholder="Введите пароль" />
                       </div>
-                      <div style={{ position: 'relative', right: '58px', top: '10px' }}>
+                      <div className="visible">
                         <Visible
                           onClick={() => setshowPassword(!showPassword)}
-                          className="visible"
                         />
                       </div>
                       <div>
@@ -162,7 +157,7 @@ function App() {
             </div>
           )
           : (
-            <div className="content">
+            <div className="content3">
               <div>
                 <Pay2me />
                 <h5 className="IntoText">Ой что то пошло не так</h5>
@@ -173,7 +168,7 @@ function App() {
               <form className="form-end">
                 <div className="input-group">
                   <div>
-                    <input style={{ borderColor: 'red', width: '380px', height: '48px' }} value={phone} onChange={(e) => setPhone(e.target.value)} type="text" className="form-control" placeholder="Введите номер телефона или почту" />
+                    <input value={phone} onChange={(e) => setPhone(e.target.value)} type="text" className="form-control" placeholder="Введите номер телефона или почту" />
                   </div>
                   <div>
                     {error && <span className="error">Возможно, электронная почта введена некорректно. Попробуйте ещё раз.</span>}
@@ -181,13 +176,13 @@ function App() {
                 </div>
                 <div className="input-group">
                   <div>
-                    <input style={{ borderColor: 'red', width: '380px', height: '48px' }} value={password} onChange={(e) => setPassword(e.target.value)} type={showPassword ? 'text' : 'password'} className="form-control" placeholder="Введите пароль" />
+                    <input value={password} onChange={(e) => setPassword(e.target.value)} type={showPassword ? 'text' : 'password'} className="form-control" placeholder="Введите пароль" />
                   </div>
                   <div>
                     {error && <span className="error">Возможно, электронная почта введена некорректно. Попробуйте ещё раз.</span>}
                   </div>
                 </div>
-                <div style={{ position: 'relative', left: '391px', bottom: '105px' }}>
+                <div style={{ position: 'relative', left: '391px', bottom: '132px' }}>
                   <Visible
                     onClick={() => setshowPassword(!showPassword)}
                     className="visible"
@@ -195,7 +190,7 @@ function App() {
                 </div>
                 <div>
                   <Button
-                    style={{ width: '377px' }}
+                    // style={{ width: '377px' }}
                     type="button"
                     className="btn btn-primary"
                   >
@@ -253,11 +248,7 @@ function App() {
             </span>
           </div>
           <div>
-            <Chat style={{
-              position: 'absolute',
-              bottom: '66px',
-            }}
-            />
+            <Chat className="chat" />
           </div>
         </div>
       </div>
